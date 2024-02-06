@@ -34,8 +34,8 @@ class MyControllerTest extends Specification {
         when: 'send pets with the correct format'
         def pets = [
             pets: [
-                    [name: 'Rex', type: 'dog'],
-                    [name: 'Laika', type: 'dog'],
+                    [name: 'Rex', type: 'DOG'],
+                    [name: 'Laika', type: 'DOG'],
             ]
         ]
         def req = HttpRequest.POST('/pet', pets)
@@ -47,7 +47,6 @@ class MyControllerTest extends Specification {
         res.body().pets.first().type == 'DOG'
     }
 
-    @IgnoreRest
     void 'send a pet malformed'() {
         when: 'send pets, one of them with a malformed name'
         def pets = [

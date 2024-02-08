@@ -5,14 +5,21 @@ import com.fasterxml.jackson.annotation.JsonSetter
 import groovy.transform.CompileStatic
 import groovy.util.logging.Slf4j
 import io.micronaut.core.annotation.Introspected
+import jakarta.persistence.Entity
+import jakarta.persistence.Id
+import jakarta.persistence.Table
 
 @Slf4j
 @CompileStatic
-@Introspected
+//@Introspected
+@Entity
+@Table(name = "genre")
 class Pet {
 
     String name
     String type
+    @Id
+    long id
 
     /**
      * Ignored on deserialization when the method is not called {@code setName}.

@@ -20,6 +20,16 @@ dependencies {
     implementation("io.micronaut.rxjava2:micronaut-rxjava2")
     implementation 'io.micronaut.rxjava2:micronaut-rxjava2-http-client'
 
+    implementation("io.micronaut.sql:micronaut-hibernate-jpa")
+    implementation("io.micronaut.data:micronaut-data-tx-hibernate")
+    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
+    runtimeOnly("com.h2database:h2")
+
+    implementation "io.micronaut:micronaut-management"
+    compileOnly "io.micronaut.data:micronaut-data-processor"
+    implementation "io.micronaut.data:micronaut-data-hibernate-jpa"
+    implementation 'io.micronaut.beanvalidation:micronaut-hibernate-validator'
+
     compileOnly("io.micronaut:micronaut-http-client")
     compileOnly("io.micronaut:micronaut-http-validation")
     compileOnly("io.micronaut.security:micronaut-security-annotations")
@@ -30,6 +40,8 @@ dependencies {
     testImplementation "io.micronaut.test:micronaut-test-spock"
     testImplementation("io.micronaut:micronaut-http-client")
     testCompileOnly "io.micronaut:micronaut-inject-groovy"
+
+    runtimeOnly "com.h2database:h2"
 }
 
 test {
